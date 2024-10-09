@@ -1,0 +1,116 @@
+/* Style global */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&display=swap');
+
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: violet;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Utiliser la police cursive Dancing Script pour l'ensemble du site */
+body,
+h1,
+p,
+a,
+button {
+    font-family: 'Dancing Script', cursive;
+}
+
+
+.container {
+    text-align: center;
+    background-color: white;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    color: purple;
+    margin-bottom: 20px;
+}
+
+p {
+    color: darkviolet;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+/* Style des boutons */
+.container_button {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.button {
+    width: 200px;
+    height: 60px;
+    background-color: darkviolet;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: purple;
+    transform: scale(1.05);
+}
+
+.container_image {
+    margin: 30px 0;
+}
+
+.manga-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border: 5px solid purple;
+    border-radius: 10px;
+}
+
+/* Style global déjà présent dans style.css */
+
+/* Boutons de navigation en bas à gauche */
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    width: 120px;
+    margin: 20px auto;
+}
+
+.arrow-button {
+    width: 50px;
+    height: 50px;
+    background-color: darkviolet;
+    color: white;
+    font-size: 24px;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.arrow-button:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+}
+
+.arrow-button:hover:not(:disabled) {
+    background-color: purple;
+}

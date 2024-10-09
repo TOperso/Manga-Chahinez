@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Manga de Chahinez</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Lecture du Manga</h1>
+
+        <!-- Conteneur pour l'image du manga -->
+        <div class="container_image">
+            <img src="https://via.placeholder.com/800x600" alt="Page de Manga" id="manga-image" class="manga-image">
+        </div>
+
+        <!-- Boutons de navigation -->
+        <div class="navigation">
+            <button id="prev" class="arrow-button">&larr;</button>
+            <button id="next" class="arrow-button">&rarr;</button>
+        </div>
+
+        <a href="index.html" class="button">Retour</a>
+    </div>
+
+    <script>
+        // Tableau contenant les URLs des pages du manga
+        const mangaPages = [
+            "https://via.placeholder.com/800x600?text=Page+1",
+            "https://via.placeholder.com/800x600?text=Page+2",
+            "https://via.placeholder.com/800x600?text=Page+3",
+            "https://via.placeholder.com/800x600?text=Page+4",
+            "https://via.placeholder.com/800x600?text=Page+5",
+            "https://via.placeholder.com/800x600?text=Page+6",
+            "https://via.placeholder.com/800x600?text=Page+7",
+            "https://via.placeholder.com/800x600?text=Page+8",
+            "https://via.placeholder.com/800x600?text=Page+9",
+            "https://via.placeholder.com/800x600?text=Page+10"
+        ];
+
+        let currentPage = 0; // Page actuelle (commence à 0 pour la première page)
+
+        // Sélectionner les éléments du DOM
+        const imageElement = document.getElementById("manga-image");
+        const prevButton = document.getElementById("prev");
+        const nextButton = document.getElementById("next");
+
+        // Afficher la première page à l'ouverture
+        imageElement.src = mangaPages[currentPage];
+
+        // Gérer le bouton "Page suivante"
+        nextButton.addEventListener("click", function () {
+            if (currentPage < mangaPages.length - 1) {
+                currentPage++; // Augmente le numéro de la page
+                imageElement.src = mangaPages[currentPage]; // Met à jour l'image
+            }
+        });
+
+        // Gérer le bouton "Page précédente"
+        prevButton.addEventListener("click", function () {
+            if (currentPage > 0) {
+                currentPage--; // Diminue le numéro de la page
+                imageElement.src = mangaPages[currentPage]; // Met à jour l'image
+            }
+        });
+
+        // Désactiver les boutons au début et à la fin
+        function updateButtons() {
+            prevButton.disabled = (currentPage === 0); // Désactive le bouton si on est à la première page
+            nextButton.disabled = (currentPage === mangaPages.length - 1); // Désactive le bouton si on est à la dernière page
+        }
+
+        // Sur chaque clic, vérifier si les boutons doivent être désactivés
+        nextButton.addEventListener("click", updateButtons);
+        prevButton.addEventListener("click", updateButtons);
+
+        // Appeler la fonction au début pour s'assurer que les boutons sont bien configurés
+        updateButtons();
+    </script>
+
+</body>
+
+</html>
