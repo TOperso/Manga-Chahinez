@@ -1,40 +1,46 @@
 /* Style global */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&display=swap');
 
-
-html,
-body {
+html, body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background-color: violet;
     height: 100%;
     display: flex;
+    flex-direction: column; /* Aligner en colonne */
     justify-content: center;
     align-items: center;
+    background: none;
+    background: linear-gradient(135deg, #6a0dad, #dda0dd); /* Dégradé violet à mauve */
+    background-attachment: fixed; /* Fixe le fond pour qu'il couvre tout */
+    overflow: hidden; /* Évite les scrolls indésirables */
 }
 
+
 /* Utiliser la police cursive Dancing Script pour l'ensemble du site */
-body,
-h1,
-p,
-a,
-button {
+body, h1, h2, p, a, button {
     font-family: 'Dancing Script', cursive;
 }
 
-
 .container {
     text-align: center;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8); /* Transparence pour voir la vidéo à travers */
     padding: 50px;
+    margin: 20px 0; /* Ajoute de l'espace entre les blocs */
     border-radius: 15px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1;
 }
 
 h1 {
     color: purple;
     margin-bottom: 20px;
+}
+
+h2 {
+    color: darkviolet;
+    margin-bottom: 20px;
+    font-size: 24px;
 }
 
 p {
@@ -81,9 +87,6 @@ p {
     border-radius: 10px;
 }
 
-/* Style global déjà présent dans style.css */
-
-/* Boutons de navigation en bas à gauche */
 .navigation {
     display: flex;
     justify-content: space-between;
