@@ -1,0 +1,104 @@
+/* Importation de la police Dancing Script */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&display=swap');
+
+/* Réinitialisation des marges et paddings */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #6a0dad, #dda0dd);
+    background-attachment: fixed;
+}
+
+/* Police principale */
+body, h1, h2, p, a, button {
+    font-family: 'Dancing Script', cursive;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.description {
+  white-space: wrap;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.wrap {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);  /* 2 boîtes par ligne */
+  gap: 20px; /* Espacement entre les boîtes */
+  width: 100%;
+  padding: 24px;
+  justify-items: center;  /* Centrer les éléments */
+}
+
+.box {
+  width: 100%;
+  background-color: aliceblue;
+  max-width: 350px; /* Largeur maximale de chaque boîte */
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border-radius: 12px;  /* Coins arrondis */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);  /* Ombre portée douce */
+}
+
+.box-top {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 36px;
+}
+
+.box-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: 50% 20%;
+  border-radius: 8px; /* Coins arrondis pour l'image */
+}
+
+.title-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.box-title {
+  border-left: 3px solid;
+  padding-left: 12px;
+}
+.button {
+  width: 160px;
+  height: 50px;
+  background-color: darkviolet;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  margin-top: 20px;
+}

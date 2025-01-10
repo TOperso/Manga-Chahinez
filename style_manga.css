@@ -1,0 +1,180 @@
+/* Importation de la police Dancing Script */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&display=swap');
+
+/* Réinitialisation des marges et paddings */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #6a0dad, #dda0dd);
+    background-attachment: fixed;
+}
+
+
+.titre{
+    display: flex;
+    justify-content: center;
+    align-items: column;
+    width: auto;
+    height: auto;
+}
+/* Mise en page manga spécifique */
+.manga-layout {
+    display: flex;
+    align-items: center; /* Centre tous les éléments à l'intérieur du container */
+    justify-content: center; /* Aligne verticalement au centre */
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    gap: 40px; /* Espacement entre les éléments */
+}
+
+/* Section gauche manga */
+.manga-left-section {
+    flex: 1;
+    max-width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center; /* Centre les éléments à l'intérieur de la section */
+}
+
+/* Conteneur des blocs */
+.container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Titres et paragraphes */
+h1 {
+    color: purple;
+    margin-bottom: 15px;
+}
+
+h2 {
+    color: darkviolet;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+p {
+    color: darkviolet;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* Section droite manga */
+.manga-right-section {
+    flex: 1; /* La section occupe une partie égale */
+    max-width: 45%; /* Limite la largeur de la section */
+    display: flex;
+    flex-direction: column; /* Organise les éléments en colonne */
+    justify-content: center;
+    align-items: center;
+}
+.scrollable-text {
+    height: 500px; /* Définissez une hauteur fixe pour le bloc */
+    width: 100%; /* Utilise toute la largeur disponible */
+    overflow: auto; /* Permet de faire défiler le contenu si celui-ci dépasse */
+    padding: 20px; /* Un peu de padding pour rendre l'intérieur plus lisible */
+    background-color: rgba(255, 255, 255, 0.8); /* Optionnel, pour l'apparence */
+    border-radius: 10px; /* Arrondi les coins pour un aspect esthétique */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Ombre pour améliorer l'apparence */
+}
+
+.navigation{
+    display: flex;
+    flex-direction: center; /* Organise les éléments en colonne */
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+.container_image {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid darkviolet;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Style de l'image */
+.manga-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Boutons */
+.arrow-button {
+    width: 50px;
+    height: 50px;
+    background-color: darkviolet;
+    color: white;
+    font-size: 24px;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.arrow-button:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+}
+
+.arrow-button:hover:not(:disabled) {
+    background-color: purple;
+}
+
+/* Bouton retour */
+.button {
+    width: 160px;
+    height: 50px;
+    background-color: darkviolet;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.button:hover {
+    background-color: purple;
+    transform: scale(1.05);
+}
+
+/* Adaptation pour les téléphones */
+@media screen and (max-width: 768px) {
+    .manga-layout {
+        flex-direction: column; /* Met les sections en colonne */
+        gap: 20px; /* Réduit l'espace entre les sections */
+    }
+
+    .manga-left-section, .manga-right-section {
+        max-width: 100%; /* Chaque section occupe toute la largeur */
+        flex: none; /* Désactive le comportement flex */
+    }
+
+    .manga-image {
+        width: 100%; /* L'image prend toute la largeur disponible */
+    }
+}

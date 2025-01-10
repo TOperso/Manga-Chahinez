@@ -1,64 +1,109 @@
-/* Style global */
+/* Importation de la police Dancing Script */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&display=swap');
 
+/* Réinitialisation des marges et paddings */
 html, body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
     height: 100%;
     display: flex;
-    flex-direction: column; /* Aligner en colonne */
     justify-content: center;
     align-items: center;
-    background: none;
-    background: linear-gradient(135deg, #6a0dad, #dda0dd); /* Dégradé violet à mauve */
-    background-attachment: fixed; /* Fixe le fond pour qu'il couvre tout */
-    overflow: hidden; /* Évite les scrolls indésirables */
+    background: linear-gradient(135deg, #6a0dad, #dda0dd);
+    background-attachment: fixed;
 }
 
-
-/* Utiliser la police cursive Dancing Script pour l'ensemble du site */
+/* Police principale */
 body, h1, h2, p, a, button {
     font-family: 'Dancing Script', cursive;
 }
 
+header{
+    width: 100%;
+    height: 6.5%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: aliceblue;
+    overflow: hidden;
+}
+
+.ul_lien{
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+}
+li{
+    margin-left: 60px;
+    list-style-type: none;
+    font-size: larger;
+}
+
+.main-layout {
+    display: flex;
+    justify-content: space-between; /* Ajoute de l'espace entre les sections */
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    gap: 40px;
+}
+
+.left-section {
+    flex: 1; 
+    max-width: 45%; 
+    display: flex;
+    flex-direction: column;
+    align-items:center ;
+    justify-content: center;
+    gap: 20px;
+}
+
 .container {
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.8); /* Transparence pour voir la vidéo à travers */
-    padding: 50px;
-    margin: 20px 0; /* Ajoute de l'espace entre les blocs */
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
     border-radius: 15px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+    
 }
+.container_op {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    justify-content: center;
+}
+
 
 h1 {
     color: purple;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 h2 {
     color: darkviolet;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-size: 24px;
 }
 
 p {
     color: darkviolet;
     font-size: 18px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
-/* Style des boutons */
 .container_button {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 20px;
 }
 
 .button {
-    width: 200px;
-    height: 60px;
+    width: 160px;
+    height: 50px;
     background-color: darkviolet;
     color: white;
     display: flex;
@@ -66,7 +111,7 @@ p {
     align-items: center;
     border-radius: 10px;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
@@ -75,45 +120,36 @@ p {
     transform: scale(1.05);
 }
 
-.container_image {
-    margin: 30px 0;
-}
-
-.manga-image {
-    width: 100%;
-    max-width: 800px;
-    height: auto;
-    border: 5px solid purple;
-    border-radius: 10px;
-}
-
-.navigation {
-    display: flex;
-    justify-content: space-between;
-    width: 120px;
-    margin: 20px auto;
-}
-
-.arrow-button {
-    width: 50px;
-    height: 50px;
-    background-color: darkviolet;
-    color: white;
-    font-size: 24px;
-    border: none;
-    border-radius: 50%;
+.right-section {
+    flex: 1; 
+    max-width: 45%;
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
-.arrow-button:disabled {
-    background-color: grey;
-    cursor: not-allowed;
+.placeholder-image {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    border: 5px solid darkviolet;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-.arrow-button:hover:not(:disabled) {
-    background-color: purple;
+/* Adaptation pour les téléphones */
+@media screen and (max-width: 768px) {
+    .main-layout {
+        flex-direction: column; 
+        gap: 20px;
+    }
+
+    .left-section, .right-section {
+        max-width: 100%; /* Chaque section occupe toute la largeur */
+        flex: none; /* Désactive le comportement flex */
+    }
+
+    .placeholder-image {
+        max-width: 100%; /* L'image prend toute la largeur disponible */
+    }
 }
